@@ -1,17 +1,17 @@
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import Cliente.Cliente;
+import DataBase.ConnectionFactory;
 import Endereco.Endereco;
 import Produto.Mercadoria;
 
 public class Main {
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
-        
-        //Criação do Remetente
         Cliente remetente = new Cliente();
         System.out.print("Nome ou razão social do remetente: ");
         remetente.setNomeRazao(sc.nextLine().trim());
@@ -19,6 +19,12 @@ public class Main {
         remetente.setDocumento(sc.nextLine().trim());
         System.out.print("Tipo de documento do remetente (CPF/CNPJ): ");
         remetente.setTpDocumento(sc.nextLine().trim());
+
+        
+//chamar dao... e cadastrar
+        
+        //Criação do Remetente
+       
 
         //Criação do Destinatário
         Cliente destinatario = new Cliente();
