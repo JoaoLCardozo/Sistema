@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
-    private static final String url = "jdbc:postgresql://localhost:5432/TartarugaCometa";
+    private static final String url = "jdbc:postgresql://localhost:5432/Sistema";
     private static final String usuario = "postgres";
     private static final String senha = "1234";
 

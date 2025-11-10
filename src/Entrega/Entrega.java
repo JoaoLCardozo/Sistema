@@ -19,7 +19,7 @@ public class Entrega {
     public void setRemetente(Cliente remetente) {
         this.remetente = remetente;
     }
-    public int getId_cliente() {
+    public int getIdCliente() {
         return idCliente;
     }
 

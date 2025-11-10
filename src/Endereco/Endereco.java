@@ -1,4 +1,7 @@
 package Endereco;
+
+import Cliente.Cliente;
+
 public class Endereco {
     
     private String rua;
@@ -8,6 +11,7 @@ public class Endereco {
     private String cidade;
     private String complemento;
     private String uf;
+    private int idEndereco;
     
     public String getRua() {
         return rua;
@@ -51,6 +55,16 @@ public class Endereco {
     public void setUf(String uf) {
         this.uf = uf;
     }
-
+    public int getIdEndereco() {
+        return idEndereco;
+    }
+    public void setIdEndereco(int idEndereco) {
+        this.idEndereco = idEndereco;
+    }
+    
+    public void salvarEndereco(Cliente remetente) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'salvarEndereco'");
+    }
     
 }

@@ -8,6 +8,7 @@ public class Cliente {
     private String tpDocumento;
     private Endereco endereco;
     
+    
     public String getNomeRazao() {
         return nomeRazao;
     }

@@ -3,15 +3,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import Cliente.Cliente;
+import Cliente.ClienteDAO;
 import DataBase.ConnectionFactory;
 import Endereco.Endereco;
+import Endereco.EnderecoDAO;
 import Produto.Mercadoria;
+import Produto.MercadoriaDAO;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        //Criação do Remetente
         Cliente remetente = new Cliente();
         System.out.print("Nome ou razão social do remetente: ");
         remetente.setNomeRazao(sc.nextLine().trim());
@@ -23,7 +27,6 @@ public class Main {
         
 //chamar dao... e cadastrar
         
-        //Criação do Remetente
        
 
         //Criação do Destinatário
@@ -161,7 +164,32 @@ public class Main {
         
         System.out.println("------------------------------------------------");
         // Printa o resultado final
+
         System.out.printf("VALOR TOTAL DA MERCADORIA: R$ %.2f\n", valorTotalMercadoria);
+                 
+        remetente.setEndereco(endEnvio);
+        destinatario.setEndereco(endEntrega);
+
+        EnderecoDAO enderecoDAO = new EnderecoDAO();
+        int idEnderecoRemetente = enderecoDAO.salvarEndereco(endEnvio);
+        int idEnderecoDestinatario = enderecoDAO.salvarEndereco(endEntrega);
+        remetente.getEndereco().setIdEndereco (idEnderecoRemetente);
+        destinatario.getEndereco().setIdEndereco(idEnderecoDestinatario);
+
+        
+        ClienteDAO clienteDAO = new ClienteDAO();
+        clienteDAO.salvarCliente(remetente);
+        clienteDAO.salvarCliente(destinatario);
+
+        MercadoriaDAO mercadoriaDAO = new MercadoriaDAO();
+        int idProduto = 0;
+        for (Mercadoria produto : listaDeProdutos) {
+            idProduto = mercadoriaDAO.salvarMercadoria(produto);
+            produto.setIdProduto(idProduto);
+        }
+        EntregaDAO entre
+
+        
         sc.close();
     }
 }

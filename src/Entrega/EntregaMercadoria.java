@@ -1,6 +1,4 @@
 package Entrega;
-import Produto.Mercadoria;
-import Entrega.Entrega;
 
 public class EntregaMercadoria {
     int quantidade;
