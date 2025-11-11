@@ -9,7 +9,7 @@ import DataBase.ConnectionFactory;
 
 public class MercadoriaDAO {
 
-    private static final String INSERT_SQL = "INSERT INTO mercadoria (nome, peso, preco, volume, quantidade) VALUES (?,?,?,?,?) RETURNING id_entrega";
+    private static final String INSERT_SQL = "INSERT INTO mercadoria (nome, peso, preco, volume) VALUES (?,?,?,?) RETURNING id_mercadoria";
 
     public int salvarMercadoria(Mercadoria mercadoria){
         int idProduto = 0;
@@ -19,7 +19,6 @@ public class MercadoriaDAO {
                 ps.setDouble(2, mercadoria.getPeso());
                 ps.setDouble(3, mercadoria.getPreco());
                 ps.setDouble(4, mercadoria.getVolume());
-                ps.setInt(5, mercadoria.getQuantidade());
 
                 ResultSet rs = ps.executeQuery();
                 if(rs.next()){

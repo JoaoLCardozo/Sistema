@@ -63,7 +63,6 @@ public class Endereco {
     }
     
     public void salvarEndereco(Cliente remetente) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'salvarEndereco'");
     }
     

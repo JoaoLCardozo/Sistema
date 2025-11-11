@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import Cliente.Cliente;
 import Cliente.ClienteDAO;
-import DataBase.ConnectionFactory;
 import Endereco.Endereco;
 import Endereco.EnderecoDAO;
+import Entrega.Entrega;
+import Entrega.EntregaDAO;
 import Produto.Mercadoria;
 import Produto.MercadoriaDAO;
 
@@ -187,7 +188,8 @@ public class Main {
             idProduto = mercadoriaDAO.salvarMercadoria(produto);
             produto.setIdProduto(idProduto);
         }
-        EntregaDAO entre
+        EntregaDAO entregaDAO = new EntregaDAO();
+        entregaDAO.salvarEntrega(Entrega)
 
         
         sc.close();
